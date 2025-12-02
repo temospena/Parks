@@ -24,4 +24,5 @@ paths = paths |> select(osm_id, name, highway, osm_id.1, geometry) |>
   rename(park_osm_id = osm_id.1)
 mapview(paths) + mapview(parks_case)
 st_write(paths, "data/munich_park_paths_case.geojson", delete_dsn = TRUE)
+st_write(parks_case, "data/munich_parks_case.geojson", delete_dsn = TRUE)
          
